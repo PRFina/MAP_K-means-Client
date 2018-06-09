@@ -1,41 +1,34 @@
-package protocol.protocol;
+package protocol;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-class RequestMessage {
+public class RequestMessage implements Serializable {
 
     private MessageType type;
     private Map<String,String> body;
 
-    RequestMessage(MessageType msgType) {
+    public RequestMessage(MessageType msgType) {
         this.type = msgType;
         body = new HashMap<>();
     }
 
-    void addBodyField(String key, String value){
+    public MessageType getRequestType(){return type;}
+
+    public void addBodyField(String key, String value){
         body.put(key,value);
     }
 
-    public static void main(String[] args) {
-        try {
-            Socket socket = new Socket("127.0.0.1", 8080);
-            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+    public String getBodyField(String fieldKey){
+        return body.get(fieldKey);
+    }
 
-            RequestMessage msg = new RequestMessage(MessageType.DISCOVER);
-            msg.addBodyField("iterations","10");
-            msg.addBodyField("table","someTable");
-            msg.addBodyField("file","someTable.dat");
-
-            out.writeObject(msg);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public String toString() {
+        return "RequestMessage{" +
+                "type=" + type +
+                ", body=" + body +
+                '}';
     }
 }

@@ -1,6 +1,8 @@
-package protocol.protocol;
+package protocol;
 
-public enum MessageType {
+import java.io.Serializable;
+
+public enum MessageType implements Serializable {
     DISCOVER,
     READ,
 }

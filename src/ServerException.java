@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class ServerException extends Exception{
 
-public class ServerException {
+    ServerException(String message){
+        super(message);
+    }
 }
