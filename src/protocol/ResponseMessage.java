@@ -9,11 +9,14 @@ public class ResponseMessage implements Serializable {
     private String status;
     private Map<String,String> body;
 
-    public ResponseMessage(MessageType type){
-        this.type = type;
+    public ResponseMessage(){
+
         body = new HashMap<>();
     }
 
+    public void setResponseType(MessageType type){
+        this.type = type;
+    }
     public void setStatus(String status){
         this.status = status;
     }

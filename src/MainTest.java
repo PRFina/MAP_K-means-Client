@@ -105,7 +105,7 @@ public class MainTest {
 
 					try {
 						String result = main.readActivity();
-						System.out.println(result);
+						System.out.println(result); // DEBUG
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
@@ -118,7 +118,7 @@ public class MainTest {
 					String result = null;
 					try {
 						result = main.discoverActivity();
-						System.out.println(result);
+						System.out.println(result); // DEBUG
 					} catch (IOException e) {
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
