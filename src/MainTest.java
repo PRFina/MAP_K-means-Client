@@ -1,13 +1,10 @@
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.SocketException;
 
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import keyboardinput.Keyboard;
 import protocol.MessageType;
 import protocol.RequestMessage;
@@ -30,7 +27,7 @@ public class MainTest {
 		System.out.println(socket);
 		
 		out = new ObjectOutputStream(socket.getOutputStream());
-		in = new ObjectInputStream(socket.getInputStream());	; // stream con richieste del client
+		in = new ObjectInputStream(socket.getInputStream()); // stream con richieste del client
 	}
 	
 	private int menu(){
@@ -39,7 +36,7 @@ public class MainTest {
 		do{
 			System.out.println("(1) Carica Cluster da File");
 			System.out.println("(2) Carica Dati");
-			System.out.print("Risposta:");
+			System.out.print("Risposta: ");
 			answer=Keyboard.readInt();
 		}
 		while(answer<=0 || answer>2);
@@ -85,11 +82,11 @@ public class MainTest {
 	}
 
 	public static void main(String[] args) {
-		String ip=args[0];
-		int port=new Integer(args[1]).intValue();
+		AppSettings settings = new AppSettings("settings.properties");
 		MainTest main=null;
 		try{
-			main=new MainTest(ip,port);
+			main=new MainTest(settings.getSetting("server_address"),
+					Integer.parseInt(settings.getSetting("server_port")));
 		}
 		catch (IOException e){
 			System.out.println(e);
