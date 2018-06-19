@@ -7,10 +7,11 @@ import java.io.ObjectOutputStream;
 
 public abstract class Action {
 
-    ObjectInputStream in;
-    ObjectOutputStream out;
+    protected ObjectInputStream in;
+    protected ObjectOutputStream out;
 
-    protected Action(ObjectInputStream in, ObjectOutputStream out){
+    protected Action(final ObjectInputStream in,
+                     final ObjectOutputStream out) {
         this.in = in;
         this.out = out;
     }

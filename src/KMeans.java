@@ -53,7 +53,7 @@ public class KMeans {
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null,"Connection refused, check your connection or " +
 					"try later!","Connection Error",JOptionPane.ERROR_MESSAGE);
-			System.exit(0);
+			System.exit(1);
 			e.printStackTrace();
 		}
 
