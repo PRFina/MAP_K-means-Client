@@ -1,7 +1,5 @@
 package actions;
 
-import exceptions.ServerException;
-
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -9,7 +7,7 @@ import java.io.ObjectOutputStream;
  * This class provide a base implementation for an action.
  * <p>
  * Since each class communicate with server,
- * the class constructor provides through constructor injection
+ * the class constructor provides, through constructor, injection
  * the IO streams needed to send and receive data from server.
  * </p>
  * <p>

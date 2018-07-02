@@ -1,7 +1,7 @@
 import actions.Action;
 import actions.DiscoverAction;
 import actions.ReadAction;
-import exceptions.ServerException;
+import actions.ServerException;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;

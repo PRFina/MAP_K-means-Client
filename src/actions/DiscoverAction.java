@@ -1,6 +1,5 @@
 package actions;
 
-import exceptions.ServerException;
 import protocol.MessageType;
 import protocol.RequestMessage;
 import protocol.ResponseMessage;
