@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.SocketException;
 
 import javax.swing.*;
 
@@ -22,8 +21,9 @@ public class KMeans {
 
 	
 	public void init() {
-	    AppSettings settings = new AppSettings("settings.properties");
-		JFrame mainWindow = new JFrame("KMeans");
+	    AppConfig settings = new AppConfig("settings.properties");
+
+	    JFrame mainWindow = new JFrame("KMeans");
 		try {
 			TabbedPane tabbedPane = new TabbedPane();
 			mainWindow.getContentPane().add(tabbedPane);
