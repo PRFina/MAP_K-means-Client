@@ -59,7 +59,6 @@ public final class DiscoverAction extends Action {
             e.printStackTrace();
         }
 
-
         return resp.getBodyField("data");
 
     }

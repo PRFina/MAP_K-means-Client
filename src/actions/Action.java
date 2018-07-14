@@ -7,12 +7,12 @@ import java.io.ObjectOutputStream;
  * This class provide a base implementation for an action.
  * <p>
  * Since each class communicate with server,
- * the class constructor provides, through constructor, injection
- * the IO streams needed to send and receive data from server.
+ * the class constructor provides, through constructor, the IO streams
+ * injection needed to send and receive data from server.
  * </p>
  * <p>
  * The execute method must be defined in child classes and provides
- * the actual logic of the action.
+ * the actual action logic.
  * </p>
  */
 public abstract class Action {
